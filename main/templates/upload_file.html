@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h2 {% if success %}style="color: green;"{% elif success is False %}style="color: red;"{% endif %}>{{ title }}</h2>
+    <h3>{{ number }}</h3>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit me!">
+    </form>
+</body>
+</html>
